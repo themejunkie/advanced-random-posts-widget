@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== Advanced Random Posts Widget ===
 Contributors: satrya
 Tags: random posts, random, thumbnails, widget, widgets, sidebar, excerpt, multiple widgets
 Requires at least: 3.5
