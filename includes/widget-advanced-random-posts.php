@@ -3,7 +3,7 @@
 // Exit if accessed directly
 if ( ! defined('ABSPATH') ) exit;
 
-class arpw_widget extends WP_Widget {
+class Arp_Widget extends WP_Widget {
 
 	/**
 	 * Widget setup
@@ -289,7 +289,7 @@ class arpw_widget extends WP_Widget {
  * @since 1.0
  */
 function arpw_register_widget() {
-	register_widget( 'arpw_widget' );
+	register_widget( 'Arp_Widget' );
 }
 add_action( 'widgets_init', 'arpw_register_widget' );
 

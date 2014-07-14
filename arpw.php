@@ -1,21 +1,34 @@
 <?php
-/*
-Plugin Name:  Advanced Random Posts Widget
-Plugin URI:   http://wordpress.org/plugins/advanced-random-posts-widget/
-Description:  Enables advanced random posts widget.
-Version:      1.5.1
-Author:       Satrya
-Author URI:   http://satrya.me/
-Author Email: satrya@satrya.me
-License:      GPLv2
-*/
+/**
+ * Plugin Name:  Advanced Random Posts Widget
+ * Plugin URI:   http://satrya.me/wordpress-plugins/advanced-random-posts-widget/
+ * Description:  Enables advanced random posts widget.
+ * Version:      1.6
+ * Author:       Satrya
+ * Author URI:   http://satrya.me/
+ * Author Email: satrya@satrya.me
+ *
+ * This program is free software; you can redistribute it and/or modify it under the terms of the GNU 
+ * General Public License as published by the Free Software Foundation; either version 2 of the License, 
+ * or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without 
+ * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ *
+ * You should have received a copy of the GNU General Public License along with this program; if not, write 
+ * to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+ *
+ * @since      1.0
+ * @author     Satrya <satrya@satrya.me>
+ * @copyright  Copyright (c) 2014, Satrya
+ * @link       http://satrya.me/wordpress-plugin/related-post-types
+ * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ */
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-if ( ! class_exists( 'ARP_Widget' ) ) :
-
-class ARP_Widget {
+class Advanced_Random_Posts_Widget {
 
 	/**
 	 * PHP5 constructor method.
@@ -24,11 +37,14 @@ class ARP_Widget {
 	 */
 	public function __construct() {
 
-		add_action( 'plugins_loaded'       , array( &$this, 'constants' ), 1 );
+		// Set constant path to the plugin directory.
+		add_action( 'plugins_loaded', array( &$this, 'constants' ), 1 );
 
-		add_action( 'plugins_loaded'       , array( &$this, 'i18n' ), 2 );
+		// Internationalize the text strings used.
+		add_action( 'plugins_loaded', array( &$this, 'i18n' ), 2 );
 
-		add_action( 'plugins_loaded'       , array( &$this, 'includes' ), 3 );
+		// Loads the functions files.
+		add_action( 'plugins_loaded', array( &$this, 'includes' ), 3 );
 
 		add_action( 'admin_enqueue_scripts', array( &$this, 'admin_style' ) );
 
@@ -41,10 +57,13 @@ class ARP_Widget {
 	 */
 	public function constants() {
 
-		define( 'ARPW_DIR'     , trailingslashit( plugin_dir_path( __FILE__ ) ) );
+		// Set constant path to the plugin directory.
+		define( 'ARPW_DIR', trailingslashit( plugin_dir_path( __FILE__ ) ) );
 
-		define( 'ARPW_URI'     , trailingslashit( plugin_dir_url( __FILE__ ) ) );
+		// Set the constant path to the plugin directory URI.
+		define( 'ARPW_URI', trailingslashit( plugin_dir_url( __FILE__ ) ) );
 
+		// Set the constant path to the includes directory.
 		define( 'ARPW_INCLUDES', ARPW_DIR . trailingslashit( 'includes' ) );
 
 	}
@@ -55,7 +74,6 @@ class ARP_Widget {
 	 * @since 1.0
 	 */
 	public function i18n() {
-		/* Load the translation of the plugin. */
 		load_plugin_textdomain( 'arpw', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 	}
 
@@ -79,6 +97,4 @@ class ARP_Widget {
 
 }
 
-new ARP_Widget;
-endif;
-?>
+new Advanced_Random_Posts_Widget;

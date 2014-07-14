@@ -1,9 +1,9 @@
 === Plugin Name ===
-Contributors: satrya
-Tags: random posts, random, thumbnails, widget, widgets, sidebar, excerpt, multiple widgets
-Requires at least: 3.5
-Tested up to: 3.6
-Stable tag: 1.5.1
+Contributors: satrya, themephe
+Tags: random posts, random posts widget, random, thumbnails, widget, widgets, sidebar, excerpt, multiple widgets
+Requires at least: 3.8
+Tested up to: 3.9.1
+Stable tag: 1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,33 +56,5 @@ This plugin creates custom image sizes. If you use images that were uploaded to 
 
 == Changelog ==
 
-1.5.1
-* Forgot to commit `admin.css`
-
-1.5 - 09/07/2013
-* PLEASE RE-SAVE THE WIDGET
-* Fix title widget filter bug
-* Change Limit option to input text rather than selectbox
-* Add CSS ID option
-* Add widget title url
-* Add turn on off default styles
-* Add multiple category option
-* Add multiple tag option
-* Update language
-
-= 1.4 - 04/19/2013 =
-* Change support uri
-
-= 1.3 - 04/02/2013 = 
-* Remove `a` tag when no thumbnail
-* Add custom css box
-* Inheritance `font-family`
-
-= 1.2 - 02/23/13 =
-* Minor update
-
-= 1.1 - 17/2/2013 =
-* Minor update
-
-= 1.0 - 10/2/2013 =
-* Initial release
+1.6 - 07/13/2013
+*
