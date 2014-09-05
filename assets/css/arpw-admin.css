@@ -1,0 +1,37 @@
+.widgets-php .arpw-columns-3 {
+	overflow: hidden;
+	float: left;
+	width: 31%;
+	margin-right: 3.5%;
+}
+
+.widgets-php .arpw-columns-3 select.widefat {
+	width: 98.5%;
+}
+
+.widgets-php .arpw-column-last {
+	float: right;
+	margin-right: 0;
+}
+
+.widgets-php .arpw-columns-3 label {
+	font-size: 11px;
+}
+
+.widgets-php .arpw-columns-3 p small {
+	color: #777;
+	font-style: italic;
+}
+
+.small-input {
+	width: 78px;
+}
+
+.arpw-block {
+	display: block;
+}
+
+label.input-checkbox {
+	width: 100px;
+	display: inline-block;
+}
