@@ -1,88 +1,171 @@
 === Advanced Random Posts Widget ===
-Contributors: satrya
-Tags: random posts, random, thumbnails, widget, widgets, sidebar, excerpt, multiple widgets
-Requires at least: 3.5
-Tested up to: 3.6
-Stable tag: 1.5.1
+Contributors: satrya, themejunkie
+Tags: random posts, thumbnail, widget, widgets, sidebar, excerpt, category, post tag, post type, taxonomy, shortcode, multiple widgets
+Requires at least: 3.6
+Tested up to: 4.0
+Stable tag: 2.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Provides flexible and advanced random posts widget. Allows you to display them with thumbnails, post excerpt, multiple category and more.
+Provides flexible and advanced random posts. Display it via shortcode or widget with thumbnails, post excerpt, and much more!
 
 == Description ==
 
-**After updating, please re-save the widget**
+This plugin will enable a custom, flexible and advanced random posts. It allows you to display a list of random posts via shortcode or widget with thumbnail, excerpt and post date, also you can display it from all or specific or multiple taxonomy. 
 
-This plugin will enable a custom, flexible and super advanced random posts widget. Allows you to display a list of the most random posts with thumbnail, excerpt and post date, also you can display it from all or specific or multiple category or tag.
+= Features Include =
 
-= Features Include: =
-
-* Display thumbnails, with customizable size.
+* WordPress 4.0 Support.
+* Allow you to set title url.
+* Display thumbnails, with customizable size and alignment.
 * Display excerpt, with customizable length.
-* Display from all or a specific category.
+* Display from all, specific or multiple taxonomy.
 * Display post date.
-* Support `get_the_image` function.
+* Post types.
+* Post status.
+* Allow you to set custom css per widget.
+* Add custom html or text before and/or after random posts.
 * Multiple widgets.
 
-**New Features**
+= Plugin Support =
+* [Get the Image](http://wordpress.org/plugins/get-the-image/).
+* [Page Builder by SiteOrigin](http://wordpress.org/plugins/siteorigin-panels/).
 
-* CSS ID option
-* Widget title url
-* Turn on/off default style
-* Limit to spesfic or multiple category
-* Limit to spesfic or multiple tag
+= Image Sizes Issue =
 
-= Ugly Image Sizes =
-This plugin creates custom image sizes. If you use images that were uploaded to the media library before you installed this plugin, please install [Regenerate Thumbnails](http://wordpress.org/extend/plugins/regenerate-thumbnails/) plugin to corrected the sizes.
+This plugin creates custom image sizes. If you use images that were uploaded to the media library before you installed this plugin, please install [Regenerate Thumbnails](http://wordpress.org/extend/plugins/regenerate-thumbnails/) plugin to fix the image size.
 
 = Support =
-* Go to [forum support](http://wordpress.org/support/plugin/advanced-random-posts-widget).
-* [Open issue on github](https://github.com/satrya/advanced-random-posts-widget/issues).
-* [Rate/Review the plugin](http://wordpress.org/support/view/plugin-reviews/advanced-random-posts-widget).
 
-= Developed by: =
-* [Satrya](http://satrya.me/) - [Twitter](https://twitter.com/msattt)
+* Go to [forum support](http://wordpress.org/support/plugin/arpw).
+* [Rate/Review the plugin](http://wordpress.org/support/view/plugin-reviews/arpw).
+* Submit translation.
 
-**If you enjoy using this plugin, don't forget to rate it at [http://wordpress.org/support/view/plugin-reviews/advanced-random-posts-widget](http://wordpress.org/support/view/plugin-reviews/advanced-random-posts-widget)**
+= Plugin Info =
+* Developed by [Satrya](http://satrya.me/) & [Theme Junkie](http://www.theme-junkie.com/)
+* Check out the [Github](https://github.com/satrya/arpw) repo to contribute.
+
+= Posts Plugin Series =
+* [Recent Posts Widget Extended](http://wordpress.org/plugins/recent-posts-widget-extended/)
+* [Advanced Random Posts Widget](http://wordpress.org/plugins/advanced-random-posts-widget/)
 
 == Installation ==
 
-1. Upload the 'advanced-random-posts-widget' folder to the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Go to the widgets page.
+**Through Dashboard**
+
+1. Log in to your WordPress admin panel and go to Plugins -> Add New
+2. Type **advanced random posts widget** in the search box and click on search button.
+3. Find **Advanced Random Posts Widget** plugin.
+4. Then click on Install Now after that activate the plugin.
+5. Go to the widgets page **Appearance -> Widgets**.
+6. Find **Random Posts** widget.
+
+**Installing Via FTP**
+
+1. Download the plugin to your hardisk.
+2. Unzip.
+3. Upload the **advanced-random-posts-widget** folder into your plugins directory.
+4. Log in to your WordPress admin panel and click the Plugins menu.
+5. Then activate the plugin.
+6. Go to the widgets page **Appearance -> Widgets**.
+6. Find **Random Posts** widget.
+
+== Frequently Asked Questions ==
+
+= No image/thumbnail options? =
+Your theme needs to support Post Thumbnail, please go to http://codex.wordpress.org/Post_Thumbnails to read more info and how to activate it in your theme.
+
+= Thumbnail Size =
+By default it uses **arpw-thumbnail** which have **50x50** size. If you want to use custom image size, you can install http://wordpress.org/plugins/simple-image-sizes/ then create new image size, it will appear in the **Thumbnail Size** selectbox in the widget option.
+
+= Thumbnail Size Not Working Properly =
+I have mentioned it in the plugin description. If you use images that were uploaded to the media library before you installed this plugin and/or you have your own custom image sizes, please install [Regenerate Thumbnails](http://wordpress.org/extend/plugins/regenerate-thumbnails/) plugin to fix the image size.
+
+= How to add custom style? =
+The plugin comes with a very basic style, if you want to add custom style please do `wp_dequeue_style` to remove the default stylesheet. Place the code below in your theme `functions.php`.
+`
+function prefix_remove_arpw_style() {
+	wp_dequeue_style( 'arpw-style' );
+}
+add_action( 'wp_enqueue_scripts', 'prefix_remove_arpw_style', 10 );
+`
+Then you can add your custom style using Custom CSS plugin or in your theme `style.css`. Here's the plugin selector
+`
+/* wrapper */
+#arpw-random-posts {}
+
+/* ul */
+.arpw-ul {}
+
+/* li */
+.arpw-li {}
+
+/* title */
+.arpw-title {}
+
+/* thumbnail */
+.arpw-thumbnail {}
+
+/* date */
+.arpw-time {}
+
+/* excerpt */
+.arpw-summary {}
+`
 
 == Screenshots ==
+
 1. The widget settings
+
+== Shorcode Explanation ==
+
+Explanation of shortcode options:
+
+Basic shortcode
+`
+[arpw]
+`
+
+Display 10 random posts
+`
+[arpw limit="10"]
+`
+
+Display with thumbnail and set the size
+`
+[arpw thumbnail="true" thumbnail_size="thumbnail"]
+`
+
+**Here's the full default shortcode arguments**
+`
+title=""
+title_url=""
+offset=""
+limit="5"
+post_type="post"
+post_status="publish"
+ignore_sticky="1"
+taxonomy=""
+thumbnail="false"
+thumbnail_size="arpw-thumbnail"
+thumbnail_align="left"
+excerpt="false"
+excerpt_length="10"
+date="false"
+css_class=""
+before=""
+after=""
+`
 
 == Changelog ==
 
-1.5.1
-* Forgot to commit `admin.css`
-
-1.5 - 09/07/2013
-* PLEASE RE-SAVE THE WIDGET
-* Fix title widget filter bug
-* Change Limit option to input text rather than selectbox
-* Add CSS ID option
-* Add widget title url
-* Add turn on off default styles
-* Add multiple category option
-* Add multiple tag option
+= 2.0.0 - 9/05/2014 =
+* This is a major changes to the plugin, please re-save or re-install the plugin if you find it doesn't work properly.
+* Please read [FAQ](http://wordpress.org/plugins/advanced-random-posts-widget/faq) and [Other Notes](http://wordpress.org/plugins/advanced-random-posts-widget/other-notes) to read more about how the plugin works.
+* Tested for WordPress 4.0
+* Added shortcode support!
+* Added taxonomy support
+* Added post status support
+* Changed how the post thumbnail size works
+* Changed how the plugin style works
 * Update language
-
-= 1.4 - 04/19/2013 =
-* Change support uri
-
-= 1.3 - 04/02/2013 = 
-* Remove `a` tag when no thumbnail
-* Add custom css box
-* Inheritance `font-family`
-
-= 1.2 - 02/23/13 =
-* Minor update
-
-= 1.1 - 17/2/2013 =
-* Minor update
-
-= 1.0 - 10/2/2013 =
-* Initial release
