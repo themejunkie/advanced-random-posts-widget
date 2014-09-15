@@ -23,8 +23,8 @@
 	font-style: italic;
 }
 
-.small-input {
-	width: 78px;
+.arpw-input-half {
+	width: 47%;
 }
 
 .arpw-block {
@@ -34,4 +34,20 @@
 label.input-checkbox {
 	width: 100px;
 	display: inline-block;
+}
+
+.arpw-multiple-check-form {
+	margin: 1em 0;
+}
+
+.arpw-multiple-check-form ul {
+	border: 1px solid #eee;
+	padding: 10px;
+	max-height: 110px;
+	overflow: auto;
+	margin-top: 0;
+}
+
+.arpw-multiple-check-form ul li:last-child {
+	margin-bottom: 0;
 }

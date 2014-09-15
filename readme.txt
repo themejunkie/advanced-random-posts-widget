@@ -1,9 +1,10 @@
 === Advanced Random Posts Widget ===
 Contributors: satrya, themejunkie
+Donate link: http://satrya.me/donate/
 Tags: random posts, thumbnail, widget, widgets, sidebar, excerpt, category, post tag, post type, taxonomy, shortcode, multiple widgets
-Requires at least: 3.6
+Requires at least: 3.7
 Tested up to: 4.0
-Stable tag: 2.0.0
+Stable tag: 2.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,17 +14,25 @@ Provides flexible and advanced random posts. Display it via shortcode or widget 
 
 This plugin will enable a custom, flexible and advanced random posts. It allows you to display a list of random posts via shortcode or widget with thumbnail, excerpt and post date, also you can display it from all or specific or multiple taxonomy. 
 
+= Important! =
+Before asking a support question:  
+
+* Please see [FAQ](http://wordpress.org/plugins/advanced-random-posts-widget/faq/) page to read common questions.
+* Please see [Other Notes](http://wordpress.org/plugins/advanced-random-posts-widget/other_notes/) to read how to use shortcode.
+
 = Features Include =
 
 * WordPress 4.0 Support.
 * Allow you to set title url.
 * Display thumbnails, with customizable size and alignment.
 * Display excerpt, with customizable length.
+* Display from all, specific or multiple category.
+* Display from all, specific or multiple tag.
 * Display from all, specific or multiple taxonomy.
 * Display post date.
 * Post types.
 * Post status.
-* Allow you to set custom css per widget.
+* Allow you to set custom css class per widget.
 * Add custom html or text before and/or after random posts.
 * Multiple widgets.
 
@@ -37,13 +46,13 @@ This plugin creates custom image sizes. If you use images that were uploaded to 
 
 = Support =
 
-* Go to [forum support](http://wordpress.org/support/plugin/arpw).
-* [Rate/Review the plugin](http://wordpress.org/support/view/plugin-reviews/arpw).
+* Go to [forum support](http://wordpress.org/support/plugin/advanced-random-posts-widget).
+* [Rate/Review the plugin](http://wordpress.org/support/view/plugin-reviews/advanced-random-posts-widget).
 * Submit translation.
 
 = Plugin Info =
 * Developed by [Satrya](http://satrya.me/) & [Theme Junkie](http://www.theme-junkie.com/)
-* Check out the [Github](https://github.com/satrya/arpw) repo to contribute.
+* Check out the [Github](https://github.com/satrya/advanced-random-posts-widget) repo to contribute.
 
 = Posts Plugin Series =
 * [Recent Posts Widget Extended](http://wordpress.org/plugins/recent-posts-widget-extended/)
@@ -159,13 +168,7 @@ after=""
 
 == Changelog ==
 
-= 2.0.0 - 9/05/2014 =
-* This is a major changes to the plugin, please re-save or re-install the plugin if you find it doesn't work properly.
-* Please read [FAQ](http://wordpress.org/plugins/advanced-random-posts-widget/faq) and [Other Notes](http://wordpress.org/plugins/advanced-random-posts-widget/other-notes) to read more about how the plugin works.
-* Tested for WordPress 4.0
-* Added shortcode support!
-* Added taxonomy support
-* Added post status support
-* Changed how the post thumbnail size works
-* Changed how the plugin style works
-* Update language
+= 2.0.1 - 9/15/2014 =
+* Bring back custom thumbnail size options!
+* Bring back category and tag options!
+* Added: Relative date option `eg: 5 days ago`.

@@ -96,6 +96,38 @@
 		</select>
 	</p>
 
+	<div class="arpw-multiple-check-form">
+		<label>
+			<?php _e( 'Limit to Category', 'arpw' ); ?>
+		</label>
+		<ul>
+			<?php foreach ( get_terms( 'category' ) as $category ) : ?>
+				<li>
+					<input type="checkbox" value="<?php echo (int) $category->term_id; ?>" id="<?php echo $this->get_field_id( 'cat' ) . '-' . (int) $category->term_id; ?>" name="<?php echo $this->get_field_name( 'cat' ); ?>[]" <?php checked( is_array( $instance['cat'] ) && in_array( $category->term_id, $instance['cat'] ) ); ?> />
+					<label for="<?php echo $this->get_field_id( 'cat' ) . '-' . (int) $category->term_id; ?>">
+						<?php echo esc_html( $category->name ); ?>
+					</label>
+				</li>
+			<?php endforeach; ?>
+		</ul>
+	</div>
+
+	<div class="arpw-multiple-check-form">
+		<label>
+			<?php _e( 'Limit to Tag', 'arpw' ); ?>
+		</label>
+		<ul>
+			<?php foreach ( get_terms( 'post_tag' ) as $post_tag ) : ?>
+				<li>
+					<input type="checkbox" value="<?php echo (int) $post_tag->term_id; ?>" id="<?php echo $this->get_field_id( 'tag' ) . '-' . (int) $post_tag->term_id; ?>" name="<?php echo $this->get_field_name( 'tag' ); ?>[]" <?php checked( is_array( $instance['tag'] ) && in_array( $post_tag->term_id, $instance['tag'] ) ); ?> />
+					<label for="<?php echo $this->get_field_id( 'tag' ) . '-' . (int) $post_tag->term_id; ?>">
+						<?php echo esc_html( $post_tag->name ); ?>
+					</label>
+				</li>
+			<?php endforeach; ?>
+		</ul>
+	</div>
+
 	<p>
 		<label for="<?php echo $this->get_field_id( 'taxonomy' ); ?>">
 			<?php _e( 'Limit to Taxonomy', 'arpw' ); ?>
@@ -132,6 +164,21 @@
 		</p>
 
 		<p>
+			<input class="checkbox" type="checkbox" <?php checked( $instance['thumbnail_custom'] ); ?> id="<?php echo $this->get_field_id( 'thumbnail_custom' ); ?>" name="<?php echo $this->get_field_name( 'thumbnail_custom' ); ?>" />
+			<label for="<?php echo $this->get_field_id( 'thumbnail_custom' ); ?>">
+				<?php _e( 'Use custom thumbnail sizes', 'arpw' ); ?>
+			</label>
+		</p>
+
+		<p>
+			<label class="arpw-block" for="<?php echo $this->get_field_id( 'thumbnail_width' ); ?>">
+				<?php _e( 'Width & Height', 'arpw' ); ?>
+			</label>
+			<input class="arpw-input-half" id="<?php echo $this->get_field_id( 'thumbnail_width' ); ?>" name="<?php echo $this->get_field_name( 'thumbnail_width' ); ?>" type="number" step="1" min="0" value="<?php echo (int)( $instance['thumbnail_width'] ); ?>" />
+			<input class="arpw-input-half" id="<?php echo $this->get_field_id( 'thumbnail_height' ); ?>" name="<?php echo $this->get_field_name( 'thumbnail_height' ); ?>" type="number" step="1" min="0" value="<?php echo (int)( $instance['thumbnail_height'] ); ?>" />
+		</p>
+
+		<p>
 			<label for="<?php echo $this->get_field_id( 'thumbnail_align' ); ?>">
 				<?php _e( 'Thumbnail Alignment', 'arpw' ); ?>
 			</label>
@@ -162,6 +209,13 @@
 		<input class="checkbox" type="checkbox" <?php checked( $instance['date'] ); ?> id="<?php echo $this->get_field_id( 'date' ); ?>" name="<?php echo $this->get_field_name( 'date' ); ?>" />
 		<label for="<?php echo $this->get_field_id( 'date' ); ?>">
 			<?php _e( 'Display Date', 'arpw' ); ?>
+		</label>
+	</p>
+
+	<p>
+		<input id="<?php echo $this->get_field_id( 'date_relative' ); ?>" name="<?php echo $this->get_field_name( 'date_relative' ); ?>" type="checkbox" <?php checked( $instance['date_relative'] ); ?> />
+		<label for="<?php echo $this->get_field_id( 'date_relative' ); ?>">
+			<?php _e( 'Use Relative Date. eg: 5 days ago', 'arpw' ); ?>
 		</label>
 	</p>
 

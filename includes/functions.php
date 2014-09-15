@@ -27,13 +27,20 @@ function arpw_get_default_args() {
 		'post_status'       => 'publish',
 		'ignore_sticky'     => 1,
 		'taxonomy'          => '',
+		'cat'               => array(),
+		'tag'               => array(),
 
 		'thumbnail'         => false,
 		'thumbnail_size'    => 'arpw-thumbnail',
 		'thumbnail_align'   => 'left',
+		'thumbnail_custom'  => false,
+		'thumbnail_width'   => '',
+		'thumbnail_height'  => '',
+
 		'excerpt'           => false,
 		'excerpt_length'    => 10,
 		'date'              => false,
+		'date_relative'     => false,
 
 		'css_class'         => '',
 		'before'            => '',
@@ -95,18 +102,38 @@ function arpw_get_random_posts( $args = array() ) {
 
 							// Check if post has post thumbnail.
 							if ( has_post_thumbnail() ) :
-								$html .= '<a href="' . get_permalink() . '"  rel="bookmark">';
-									$html .= get_the_post_thumbnail( get_the_ID(), $args['thumbnail_size'], array( 'alt' => esc_attr( get_the_title() ), 'class' => 'arpw-thumbnail align' . $args['thumbnail_align'] ) );
+
+								// Custom thumbnail sizes.
+								$thumb_id = get_post_thumbnail_id(); // Get the featured image id.
+								$img_url  = wp_get_attachment_url( $thumb_id ); // Get img URL.
+								$image    = arpw_resize( $img_url, $args['thumbnail_width'], $args['thumbnail_height'], true );
+
+								$html .= '<a href="' . esc_url( get_permalink() ) . '"  rel="bookmark">';
+									if ( $args['thumbnail_custom'] ) :
+										$html .= '<img class="arpw-thumbnail align' . esc_attr( $args['thumbnail_align'] ) . '" src="' . esc_url( $image ) . '" alt="' . esc_attr( get_the_title() ) . '">';
+									else :
+										$html .= get_the_post_thumbnail( get_the_ID(), $args['thumbnail_size'], array( 'alt' => esc_attr( get_the_title() ), 'class' => 'arpw-thumbnail align' . esc_attr( $args['thumbnail_align'] ) ) );
+									endif;
 								$html .= '</a>';
 
 							// If no post thumbnail found, check if Get The Image plugin exist and display the image.
 							elseif ( function_exists( 'get_the_image' ) ) :
-								$html .= get_the_image( array( 
-									'size'         => $args['thumbnail_size'],
-									'image_class'  => 'arpw-thumbnail align' . $args['thumbnail_align'],
-									'image_scan'   => true,
-									'link_to_post' => true,
-								) );
+								if ( $args['thumbnail_custom'] ) :
+									$html .= get_the_image( array( 
+										'width'        => (int) $args['thumbnail_width'],
+										'height'       => (int) $args['thumbnail_height'],
+										'image_class'  => 'arpw-thumbnail align' . esc_attr( $args['thumbnail_align'] ),
+										'image_scan'   => true,
+										'link_to_post' => true,
+									) );
+								else:
+									$html .= get_the_image( array( 
+										'size'         => $args['thumbnail_size'],
+										'image_class'  => 'arpw-thumbnail align' . esc_attr( $args['thumbnail_align'] ),
+										'image_scan'   => true,
+										'link_to_post' => true,
+									) );
+								endif;
 
 							// Display nothing.
 							else :
@@ -118,11 +145,15 @@ function arpw_get_random_posts( $args = array() ) {
 						$html .= '<a class="arpw-title" href="' . esc_url( get_permalink() ) . '" title="' . sprintf( esc_attr__( 'Permalink to %s', 'arpw' ), the_title_attribute( 'echo=0' ) ) . '" rel="bookmark">' . esc_attr( get_the_title() ) . '</a>';
 
 						if ( $args['date'] ) :
-							$html .= '<time class="arpw-time published" datetime="' . esc_html( get_the_date( 'c' ) ) . '">' . esc_html( get_the_date() ) . '</time>';
+							$date = get_the_date();
+							if ( $args['date_relative'] ) :
+								$date = sprintf( __( '%s ago', 'arpw' ), human_time_diff( get_the_date( 'U' ), current_time( 'timestamp' ) ) );
+							endif;
+							$html .= '<time class="arpw-time published" datetime="' . esc_html( get_the_date( 'c' ) ) . '">' . esc_html( $date ) . '</time>';
 						endif;
 
 						if ( $args['excerpt'] ) :
-							$html .= '<div class="arpw-summary">' . wp_trim_words( get_the_excerpt(), $args['excerpt_length'], ' &hellip;' ) . '</div>';
+							$html .= '<div class="arpw-summary">' . wp_trim_words( apply_filters( 'arpw_excerpt', get_the_excerpt() ), $args['excerpt_length'], ' &hellip;' ) . '</div>';
 						endif;
 
 					$html .= '</li>';
@@ -155,22 +186,6 @@ function arpw_get_random_posts( $args = array() ) {
  */
 function arpw_get_posts( $args = array() ) {
 
-	/**
-	 * Taxonomy query.
-	 * Prop Miniloop plugin by Kailey Lampert.
-	 */
-	parse_str( $args['taxonomy'], $taxes );
-	$tax_query = array();
-	foreach( array_keys( $taxes ) as $k => $slug ) {
-		$ids = explode( ',', $taxes[ $slug ] );
-		$tax_query[] = array(
-			'taxonomy' => $slug,
-			'field'    => 'id',
-			'terms'    => $ids,
-			'operator' => 'IN' 
-		);
-	}
-
 	// Query arguments.
 	$query = array(
 		'offset'              => $args['offset'],
@@ -179,8 +194,39 @@ function arpw_get_posts( $args = array() ) {
 		'post_type'           => $args['post_type'],
 		'post_status'         => $args['post_status'],
 		'ignore_sticky_posts' => $args['ignore_sticky'],
-		'tax_query'           => $tax_query,
 	);
+
+	// Limit posts based on category.
+	if ( ! empty( $args['cat'] ) ) {
+		$query['category__in'] = $args['cat'];
+	}
+
+	// Limit posts based on post tag.
+	if ( ! empty( $args['tag'] ) ) {
+		$query['tag__in'] = $args['tag'];
+	}
+
+	/**
+	 * Taxonomy query.
+	 * Prop Miniloop plugin by Kailey Lampert.
+	 */
+	if ( ! empty( $args['taxonomy'] ) ) {
+
+		parse_str( $args['taxonomy'], $taxes );
+		$tax_query = array();
+		foreach( array_keys( $taxes ) as $k => $slug ) {
+			$ids = explode( ',', $taxes[ $slug ] );
+			$tax_query[] = array(
+				'taxonomy' => $slug,
+				'field'    => 'id',
+				'terms'    => $ids,
+				'operator' => 'IN' 
+			);
+		}
+
+		$query['tax_query'] = $tax_query;
+
+	}
 
 	// Allow plugins/themes developer to filter the default query.
 	$query = apply_filters( 'arpw_query', $query );

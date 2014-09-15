@@ -84,13 +84,20 @@ class Advanced_Random_Posts_Widget extends WP_Widget {
 		$instance['post_type']         = esc_attr( $new_instance['post_type'] );
 		$instance['post_status']       = esc_attr( $new_instance['post_status'] );
 		$instance['taxonomy']          = esc_attr( $new_instance['taxonomy'] );
+		$instance['cat']               = $new_instance['cat'];
+		$instance['tag']               = $new_instance['tag']; 
 
 		$instance['thumbnail']         = isset( $new_instance['thumbnail'] ) ? (bool) $new_instance['thumbnail'] : false;
 		$instance['thumbnail_size']    = esc_attr( $new_instance['thumbnail_size'] );
 		$instance['thumbnail_align']   = esc_attr( $new_instance['thumbnail_align'] );
+		$instance['thumbnail_custom']  = isset( $new_instance['thumbnail_custom'] ) ? (bool) $new_instance['thumbnail_custom'] : false;
+		$instance['thumbnail_width']   = (int) $new_instance['thumbnail_width'];
+		$instance['thumbnail_height']  = (int) $new_instance['thumbnail_height'];
+
 		$instance['excerpt']           = isset( $new_instance['excerpt'] ) ? (bool) $new_instance['excerpt'] : false;
 		$instance['excerpt_length']    = (int) $new_instance['excerpt_length'];
 		$instance['date']              = isset( $new_instance['date'] ) ? (bool) $new_instance['date'] : false;
+		$instance['date_relative']     = isset( $new_instance['date_relative'] ) ? (bool) $new_instance['date_relative'] : false;
 
 		$instance['css_class']         = sanitize_html_class( $new_instance['css_class'] );
 		$instance['before']            = wp_filter_post_kses( $new_instance['before'] );
