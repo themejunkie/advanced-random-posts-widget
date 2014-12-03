@@ -3,8 +3,8 @@ Contributors: satrya, themejunkie
 Donate link: http://satrya.me/donate/
 Tags: random posts, thumbnail, widget, widgets, sidebar, excerpt, category, post tag, post type, taxonomy, shortcode, multiple widgets
 Requires at least: 3.7
-Tested up to: 4.0
-Stable tag: 2.0.1
+Tested up to: 4.0.1
+Stable tag: 2.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -167,6 +167,10 @@ after=""
 `
 
 == Changelog ==
+
+= 2.0.2 - 12/03/2014 =
+* **Fix:** Compatibility issue with `Get The Image` plugin/extension.
+* **Fix:** Issue with `html or text before and after recent posts`, now it allow all HTML tags.
 
 = 2.0.1 - 9/15/2014 =
 * Bring back custom thumbnail size options!

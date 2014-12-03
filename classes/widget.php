@@ -100,8 +100,8 @@ class Advanced_Random_Posts_Widget extends WP_Widget {
 		$instance['date_relative']     = isset( $new_instance['date_relative'] ) ? (bool) $new_instance['date_relative'] : false;
 
 		$instance['css_class']         = sanitize_html_class( $new_instance['css_class'] );
-		$instance['before']            = wp_filter_post_kses( $new_instance['before'] );
-		$instance['after']             = wp_filter_post_kses( $new_instance['after'] );
+		$instance['before']            = stripslashes( $new_instance['before'] );
+		$instance['after']             = stripslashes( $new_instance['after'] );
 
 		return $instance;
 	}
