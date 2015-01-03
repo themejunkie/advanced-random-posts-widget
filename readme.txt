@@ -1,10 +1,9 @@
 === Advanced Random Posts Widget ===
 Contributors: satrya, themejunkie
-Donate link: http://satrya.me/donate/
 Tags: random posts, thumbnail, widget, widgets, sidebar, excerpt, category, post tag, post type, taxonomy, shortcode, multiple widgets
 Requires at least: 3.7
-Tested up to: 4.0.1
-Stable tag: 2.0.2
+Tested up to: 4.1
+Stable tag: 2.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,7 +21,7 @@ Before asking a support question:
 
 = Features Include =
 
-* WordPress 4.0 Support.
+* WordPress 4.1 Support.
 * Allow you to set title url.
 * Display thumbnails, with customizable size and alignment.
 * Display excerpt, with customizable length.
@@ -167,6 +166,11 @@ after=""
 `
 
 == Changelog ==
+
+= 2.0.3 - 4/01/2015
+* WordPress 4.1 support.
+* **Update:** Language.
+* **Add:** Bahasa Indonesia translation.
 
 = 2.0.2 - 12/03/2014 =
 * **Fix:** Compatibility issue with `Get The Image` plugin/extension.
