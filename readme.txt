@@ -169,11 +169,11 @@ after=""
 
 == Changelog ==
 
-= 2.0.4 - 11/04/2015
+= 2.0.4 - 11/04/2015 =
 * WordPress 4.1.1 support.
 * **Add:** Add Custom CSS textarea.
 
-= 2.0.3 - 4/01/2015
+= 2.0.3 - 4/01/2015 =
 * WordPress 4.1 support.
 * **Update:** Language.
 * **Add:** Bahasa Indonesia translation.
