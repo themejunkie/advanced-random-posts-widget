@@ -42,6 +42,7 @@ function arpw_get_default_args() {
 		'date'              => false,
 		'date_relative'     => false,
 
+		'css'               => '',
 		'css_class'         => '',
 		'before'            => '',
 		'after'             => ''
@@ -83,7 +84,7 @@ function arpw_get_random_posts( $args = array() ) {
 	extract( $args );
 
 	// Allow devs to hook in stuff before the loop.
-	do_action( 'arpw_before_loop' );
+	do_action( 'arpw_before_loop', $args );
 	
 	// Get the posts query.
 	$posts = arpw_get_posts( $args );
@@ -172,7 +173,7 @@ function arpw_get_random_posts( $args = array() ) {
 	wp_reset_postdata();
 
 	// Allow devs to hook in stuff after the loop.
-	do_action( 'arpw_after_loop' );
+	do_action( 'arpw_after_loop', $args );
 	
 	// Return the related posts markup.
 	return $args['before'] . $html . $args['after'];
@@ -239,3 +240,17 @@ function arpw_get_posts( $args = array() ) {
 	return $posts;
 
 }
+
+/**
+ * Custom CSS
+ *
+ * @since  2.0.4
+ */
+function arpw_custom_css( $args ) {
+
+	if ( ! empty( $args['css'] ) ) {
+		echo '<style>' . $args['css'] . '</style>';
+	}
+
+}
+add_action( 'arpw_before_loop', 'arpw_custom_css', 1 );

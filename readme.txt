@@ -1,9 +1,10 @@
 === Advanced Random Posts Widget ===
 Contributors: satrya, themejunkie
+Donate link: http://satrya.me/donate/
 Tags: random posts, thumbnail, widget, widgets, sidebar, excerpt, category, post tag, post type, taxonomy, shortcode, multiple widgets
 Requires at least: 3.7
-Tested up to: 4.1
-Stable tag: 2.0.3
+Tested up to: 4.1.1
+Stable tag: 2.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -11,7 +12,9 @@ Provides flexible and advanced random posts. Display it via shortcode or widget 
 
 == Description ==
 
-This plugin will enable a custom, flexible and advanced random posts. It allows you to display a list of random posts via shortcode or widget with thumbnail, excerpt and post date, also you can display it from all or specific or multiple taxonomy. 
+This plugin will enable a custom, flexible and advanced random posts. It allows you to display a list of random posts via shortcode or widget with thumbnail, excerpt and post date, also you can display it from all or specific or multiple taxonomy.
+
+**If you find this plugin useful for you, I will really appreciate if you could spare a couple of bucks to help me to pay my web hosting bill. [Donate here](http://satrya.me/donate/).**
 
 = Important! =
 Before asking a support question:  
@@ -21,7 +24,6 @@ Before asking a support question:
 
 = Features Include =
 
-* WordPress 4.1 Support.
 * Allow you to set title url.
 * Display thumbnails, with customizable size and alignment.
 * Display excerpt, with customizable length.
@@ -166,6 +168,10 @@ after=""
 `
 
 == Changelog ==
+
+= 2.0.4 - 11/04/2015
+* WordPress 4.1.1 support.
+* **Add:** Add Custom CSS textarea.
 
 = 2.0.3 - 4/01/2015
 * WordPress 4.1 support.

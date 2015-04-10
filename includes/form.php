@@ -222,3 +222,11 @@
 </div>
 
 <div class="clear"></div>
+
+<p>
+	<label for="<?php echo $this->get_field_id( 'css' ); ?>">
+		<?php _e( 'Custom CSS', 'arpw' ); ?>
+	</label>
+	<textarea class="widefat" id="<?php echo $this->get_field_id( 'css' ); ?>" name="<?php echo $this->get_field_name( 'css' ); ?>" style="height:180px;"><?php echo $instance['css']; ?></textarea>
+	<small><?php printf( __( 'You can find the plugin css selector on %1$sFAQ page%2$s.' ), '<a href="https://wordpress.org/plugins/advanced-random-posts-widget/faq/" target="_blank">', '</a>' ); ?></small>
+</p>
