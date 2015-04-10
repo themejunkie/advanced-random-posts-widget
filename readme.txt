@@ -14,7 +14,7 @@ Provides flexible and advanced random posts. Display it via shortcode or widget 
 
 This plugin will enable a custom, flexible and advanced random posts. It allows you to display a list of random posts via shortcode or widget with thumbnail, excerpt and post date, also you can display it from all or specific or multiple taxonomy.
 
-**If you find this plugin useful for you, I will really appreciate if you could spare a couple of bucks to help me to pay my web hosting bill. [Donate here](http://satrya.me/donate/).**
+**If you find this plugin useful for you, I will really appreciate if you could spare a couple of bucks to help me to pay my web hosting bill.** [Donate here](http://satrya.me/donate/).
 
 = Important! =
 Before asking a support question:  
