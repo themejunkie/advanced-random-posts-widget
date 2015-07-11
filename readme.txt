@@ -45,7 +45,7 @@ This plugin creates custom image sizes. If you use images that were uploaded to 
 = Language =
 * English
 * Bahasa Indonesia
-* [Please contibute to your submit your language](http://satrya.me/projects/advanced-random-posts-widget/)
+* [Please contibute to submit your language](http://satrya.me/projects/advanced-random-posts-widget/)
 
 = Support =
 
