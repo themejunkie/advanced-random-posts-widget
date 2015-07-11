@@ -1,9 +1,9 @@
 <?php
 /**
  * Plugin Name:  Advanced Random Posts Widget
- * Plugin URI:   http://wordpress.org/plugins/advanced-random-posts-widget/
+ * Plugin URI:   http://satrya.me/projects/advanced-random-posts-widget/
  * Description:  Easy to display random posts via shortcode or widget.
- * Version:      2.0.4
+ * Version:      2.0.5
  * Author:       Satrya
  * Author URI:   http://satrya.me/
  * Author Email: satrya@satrya.me
@@ -102,6 +102,7 @@ class ARP_Widget {
 		require_once( ARPW_INC . 'resizer.php' );
 		require_once( ARPW_INC . 'functions.php' );
 		require_once( ARPW_INC . 'shortcode.php' );
+		require_once( ARPW_INC . 'helpers.php' );
 	}
 
 	/**

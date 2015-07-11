@@ -1,10 +1,9 @@
 === Advanced Random Posts Widget ===
-Contributors: satrya, themejunkie
-Donate link: http://satrya.me/donate/
+Contributors: satrya
 Tags: random posts, thumbnail, widget, widgets, sidebar, excerpt, category, post tag, post type, taxonomy, shortcode, multiple widgets
-Requires at least: 3.7
-Tested up to: 4.1.1
-Stable tag: 2.0.4
+Requires at least: 4.0
+Tested up to: 4.3
+Stable tag: 2.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,8 +12,6 @@ Provides flexible and advanced random posts. Display it via shortcode or widget 
 == Description ==
 
 This plugin will enable a custom, flexible and advanced random posts. It allows you to display a list of random posts via shortcode or widget with thumbnail, excerpt and post date, also you can display it from all or specific or multiple taxonomy.
-
-**If you find this plugin useful for you, I will really appreciate if you could spare a couple of bucks to help me to pay my web hosting bill.** [Donate here](http://satrya.me/donate/).
 
 = Important! =
 Before asking a support question:  
@@ -43,7 +40,12 @@ Before asking a support question:
 
 = Image Sizes Issue =
 
-This plugin creates custom image sizes. If you use images that were uploaded to the media library before you installed this plugin, please install [Regenerate Thumbnails](http://wordpress.org/extend/plugins/regenerate-thumbnails/) plugin to fix the image size.
+This plugin creates custom image sizes. If you use images that were uploaded to the media library before you installed this plugin, please install [Regenerate Thumbnails](https://wordpress.org/plugins/force-regenerate-thumbnails/) plugin to fix the image size.
+
+= Language =
+* English
+* Bahasa Indonesia
+* [Please contibute to your submit your language](http://satrya.me/projects/advanced-random-posts-widget/)
 
 = Support =
 
@@ -52,7 +54,7 @@ This plugin creates custom image sizes. If you use images that were uploaded to 
 * Submit translation.
 
 = Plugin Info =
-* Developed by [Satrya](http://satrya.me/) & [Theme Junkie](http://www.theme-junkie.com/)
+* Developed by [Satrya](http://satrya.me/)
 * Check out the [Github](https://github.com/satrya/advanced-random-posts-widget) repo to contribute.
 
 = Posts Plugin Series =
@@ -89,7 +91,7 @@ Your theme needs to support Post Thumbnail, please go to http://codex.wordpress.
 By default it uses **arpw-thumbnail** which have **50x50** size. If you want to use custom image size, you can install http://wordpress.org/plugins/simple-image-sizes/ then create new image size, it will appear in the **Thumbnail Size** selectbox in the widget option.
 
 = Thumbnail Size Not Working Properly =
-I have mentioned it in the plugin description. If you use images that were uploaded to the media library before you installed this plugin and/or you have your own custom image sizes, please install [Regenerate Thumbnails](http://wordpress.org/extend/plugins/regenerate-thumbnails/) plugin to fix the image size.
+I have mentioned it in the plugin description. If you use images that were uploaded to the media library before you installed this plugin and/or you have your own custom image sizes, please install [Regenerate Thumbnails](https://wordpress.org/plugins/force-regenerate-thumbnails/) plugin to fix the image size.
 
 = How to add custom style? =
 The plugin comes with a very basic style, if you want to add custom style please do `wp_dequeue_style` to remove the default stylesheet. Place the code below in your theme `functions.php`.
@@ -101,9 +103,6 @@ add_action( 'wp_enqueue_scripts', 'prefix_remove_arpw_style', 10 );
 `
 Then you can add your custom style using Custom CSS plugin or in your theme `style.css`. Here's the plugin selector
 `
-/* wrapper */
-#arpw-random-posts {}
-
 /* ul */
 .arpw-ul {}
 
@@ -169,7 +168,12 @@ after=""
 
 == Changelog ==
 
-= 2.0.4 - 11/04/2015 =
+= 2.0.5 - 07/12/2015 =
+* WordPress 4.3 support
+* **Update:** Remove `ID` in the widget markup to prevent duplicate ID
+* **Update:** Limit the number of `tags` and `categories` displayed in the widget
+
+= 2.0.4 - 04/1/2015 =
 * WordPress 4.1.1 support.
 * **Add:** Add Custom CSS textarea.
 

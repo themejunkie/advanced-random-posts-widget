@@ -91,7 +91,7 @@ function arpw_get_random_posts( $args = array() ) {
 	
 	if ( $posts->have_posts() ) :
 
-		$html = '<div id="arpw-random-posts" class="arpw-random-' . sanitize_html_class( $args['post_type'] ) . ' ' . sanitize_html_class( $args['css_class'] ) . '">';
+		$html = '<div class="arpw-random-' . sanitize_html_class( $args['post_type'] ) . ' ' . sanitize_html_class( $args['css_class'] ) . '">';
 
 			$html .= '<ul class="arpw-ul">';
 
