@@ -29,7 +29,7 @@ class Advanced_Random_Posts_Widget extends WP_Widget {
 		);
 
 		// Create the widget.
-		$this->WP_Widget(
+		parent::__construct(
 			'arpw-widget',                // $this->id_base
 			__( 'Random Posts', 'arpw' ), // $this->name
 			$widget_options,              // $this->widget_options

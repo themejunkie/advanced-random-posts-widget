@@ -3,7 +3,7 @@
  * Plugin Name:  Advanced Random Posts Widget
  * Plugin URI:   http://satrya.me/projects/advanced-random-posts-widget/
  * Description:  Easy to display random posts via shortcode or widget.
- * Version:      2.0.5
+ * Version:      2.0.6
  * Author:       Satrya
  * Author URI:   http://satrya.me/
  * Author Email: satrya@satrya.me

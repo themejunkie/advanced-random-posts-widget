@@ -3,7 +3,7 @@ Contributors: satrya
 Tags: random posts, thumbnail, widget, widgets, sidebar, excerpt, category, post tag, post type, taxonomy, shortcode, multiple widgets
 Requires at least: 4.0
 Tested up to: 4.3
-Stable tag: 2.0.5
+Stable tag: 2.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -167,6 +167,9 @@ after=""
 `
 
 == Changelog ==
+
+= 2.0.6 - 07/12/2015 =
+* **Fix:** Deprecated function in WordPress 4.3
 
 = 2.0.5 - 07/12/2015 =
 * WordPress 4.3 support
