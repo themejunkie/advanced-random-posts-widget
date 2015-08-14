@@ -1,9 +1,9 @@
-=== Advanced Random Posts Widget ===
+=== Random Posts Widget Extended ===
 Contributors: satrya
 Tags: random posts, thumbnail, widget, widgets, sidebar, excerpt, category, post tag, post type, taxonomy, shortcode, multiple widgets
 Requires at least: 4.0
 Tested up to: 4.3
-Stable tag: 2.0.6
+Stable tag: 2.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,38 +28,26 @@ Before asking a support question:
 * Display from all, specific or multiple tag.
 * Display from all, specific or multiple taxonomy.
 * Display post date.
+* Display post modified date.
 * Post types.
 * Post status.
 * Allow you to set custom css class per widget.
 * Add custom html or text before and/or after random posts.
 * Multiple widgets.
 
-= Plugin Support =
-* [Get the Image](http://wordpress.org/plugins/get-the-image/).
-* [Page Builder by SiteOrigin](http://wordpress.org/plugins/siteorigin-panels/).
-
-= Image Sizes Issue =
-
-This plugin creates custom image sizes. If you use images that were uploaded to the media library before you installed this plugin, please install [Regenerate Thumbnails](https://wordpress.org/plugins/force-regenerate-thumbnails/) plugin to fix the image size.
-
 = Language =
 * English
 * Bahasa Indonesia
-* [Please contibute to submit your language](http://satrya.me/projects/advanced-random-posts-widget/)
+* [Please contibute to submit your language](https://github.com/satrya/advanced-random-posts-widget/issues)
 
 = Support =
 
-* Go to [forum support](http://wordpress.org/support/plugin/advanced-random-posts-widget).
+* [Forum support](http://wordpress.org/support/plugin/advanced-random-posts-widget).
 * [Rate/Review the plugin](http://wordpress.org/support/view/plugin-reviews/advanced-random-posts-widget).
-* Submit translation.
+* [Submit translation](https://github.com/satrya/advanced-random-posts-widget/issues).
+* [Contribute on Github](https://github.com/satrya/advanced-random-posts-widget)
 
-= Plugin Info =
-* Developed by [Satrya](http://satrya.me/)
-* Check out the [Github](https://github.com/satrya/advanced-random-posts-widget) repo to contribute.
-
-= Posts Plugin Series =
-* [Recent Posts Widget Extended](http://wordpress.org/plugins/recent-posts-widget-extended/)
-* [Advanced Random Posts Widget](http://wordpress.org/plugins/advanced-random-posts-widget/)
+> Developed with ♥️ by [Satrya](http://satrya.me/) in Indonesia
 
 == Installation ==
 
@@ -167,6 +155,10 @@ after=""
 `
 
 == Changelog ==
+
+= 2.0.7 - 08/14/2015 =
+* **Fix:** Hide widget if no posts exist
+* **Add:** Add display post modified date option
 
 = 2.0.6 - 07/12/2015 =
 * **Fix:** Deprecated function in WordPress 4.3

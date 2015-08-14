@@ -213,6 +213,13 @@
 	</p>
 
 	<p>
+		<input id="<?php echo $this->get_field_id( 'date_modified' ); ?>" name="<?php echo $this->get_field_name( 'date_modified' ); ?>" type="checkbox" <?php checked( $instance['date_modified'] ); ?> />
+		<label for="<?php echo $this->get_field_id( 'date_modified' ); ?>">
+			<?php _e( 'Display Modified Date', 'arpw' ); ?>
+		</label>
+	</p>
+
+	<p>
 		<input id="<?php echo $this->get_field_id( 'date_relative' ); ?>" name="<?php echo $this->get_field_name( 'date_relative' ); ?>" type="checkbox" <?php checked( $instance['date_relative'] ); ?> />
 		<label for="<?php echo $this->get_field_id( 'date_relative' ); ?>">
 			<?php _e( 'Use Relative Date. eg: 5 days ago', 'arpw' ); ?>

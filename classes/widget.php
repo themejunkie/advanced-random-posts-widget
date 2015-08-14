@@ -46,23 +46,31 @@ class Advanced_Random_Posts_Widget extends WP_Widget {
 	function widget( $args, $instance ) {
 		extract( $args );
 
-		// Output the theme's $before_widget wrapper.
-		echo $before_widget;
+		// Get the random posts.
+		$random = arpw_get_random_posts( $instance );
 
-		// If both title and title url is not empty, display it.
-		if ( ! empty( $instance['title_url'] ) && ! empty( $instance['title'] ) ) {
-			echo $before_title . '<a href="' . esc_url( $instance['title_url'] ) . '" title="' . esc_attr( $instance['title'] ) . '">' . apply_filters( 'widget_title',  $instance['title'], $instance, $this->id_base ) . '</a>' . $after_title;
+		// Check if the random posts exist
+		if ( $random ) :
 
-		// If the title not empty, display it.
-		} elseif ( ! empty( $instance['title'] ) ) {
-			echo $before_title . apply_filters( 'widget_title',  $instance['title'], $instance, $this->id_base ) . $after_title;
-		}
+			// Output the theme's $before_widget wrapper.
+			echo $before_widget;
 
-		// Get the random posts query.
-		echo arpw_get_random_posts( $instance );
+			// If both title and title url is not empty, display it.
+			if ( ! empty( $instance['title_url'] ) && ! empty( $instance['title'] ) ) {
+				echo $before_title . '<a href="' . esc_url( $instance['title_url'] ) . '" title="' . esc_attr( $instance['title'] ) . '">' . apply_filters( 'widget_title',  $instance['title'], $instance, $this->id_base ) . '</a>' . $after_title;
 
-		// Close the theme's widget wrapper.
-		echo $after_widget;
+			// If the title not empty, display it.
+			} elseif ( ! empty( $instance['title'] ) ) {
+				echo $before_title . apply_filters( 'widget_title',  $instance['title'], $instance, $this->id_base ) . $after_title;
+			}
+
+			// Get the random posts query.
+			echo $random;
+
+			// Close the theme's widget wrapper.
+			echo $after_widget;
+
+		endif;
 
 	}
 
@@ -76,7 +84,7 @@ class Advanced_Random_Posts_Widget extends WP_Widget {
 		$instance = $old_instance;
 
 		$instance['title']             = strip_tags( $new_instance['title'] );
-		$instance['title_url']         = esc_url( $new_instance['title_url'] );
+		$instance['title_url']         = esc_url_raw( $new_instance['title_url'] );
 
 		$instance['offset']            = (int) $new_instance['offset'];
 		$instance['limit']             = (int) $new_instance['limit'];
@@ -97,6 +105,7 @@ class Advanced_Random_Posts_Widget extends WP_Widget {
 		$instance['excerpt']           = isset( $new_instance['excerpt'] ) ? (bool) $new_instance['excerpt'] : false;
 		$instance['excerpt_length']    = (int) $new_instance['excerpt_length'];
 		$instance['date']              = isset( $new_instance['date'] ) ? (bool) $new_instance['date'] : false;
+		$instance['date_modified']     = isset( $new_instance['date_modified'] ) ? (bool) $new_instance['date_modified'] : false;
 		$instance['date_relative']     = isset( $new_instance['date_relative'] ) ? (bool) $new_instance['date_relative'] : false;
 
 		$instance['css']               = $new_instance['css'];

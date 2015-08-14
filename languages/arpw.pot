@@ -1,17 +1,17 @@
 # Copyright (C) 2015 Satrya
-# This file is distributed under the same license as the Advanced Random Posts Widget package.
+# This file is distributed under the same license as the Random Posts Widget Extended package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Advanced Random Posts Widget 2.0.3\n"
+"Project-Id-Version: Random Posts Widget Extended 2.0.7\n"
 "Report-Msgid-Bugs-To: http://satrya.me/\n"
-"POT-Creation-Date: 2015-01-03 18:12:55+00:00\n"
+"POT-Creation-Date: 2015-08-14 06:54:18+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Satrya (satrya@satrya.me)\n"
 "Language-Team: Satrya (satrya@satrya.me)\n"
-"X-Generator: grunt-wp-i18n 0.4.9\n"
+"X-Generator: grunt-wp-i18n 0.5.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Language: English\n"
@@ -150,23 +150,35 @@ msgid "Display Date"
 msgstr ""
 
 #: includes/form.php:218
+msgid "Display Modified Date"
+msgstr ""
+
+#: includes/form.php:225
 msgid "Use Relative Date. eg: 5 days ago"
 msgstr ""
 
-#: includes/functions.php:147
+#: includes/form.php:235
+msgid "Custom CSS"
+msgstr ""
+
+#: includes/form.php:238
+msgid "You can find the plugin css selector on %1$sFAQ page%2$s."
+msgstr ""
+
+#: includes/functions.php:149
 msgid "Permalink to %s"
 msgstr ""
 
-#: includes/functions.php:152
+#: includes/functions.php:154 includes/functions.php:160
 msgid "%s ago"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-msgid "Advanced Random Posts Widget"
+msgid "Random Posts Widget Extended"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "http://wordpress.org/plugins/advanced-random-posts-widget/"
+msgid "http://satrya.me/projects/advanced-random-posts-widget/"
 msgstr ""
 
 #. Description of the plugin/theme
