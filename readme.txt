@@ -1,5 +1,5 @@
 === Random Posts Widget Extended ===
-Contributors: satrya
+Contributors: satrya, themephe
 Tags: random posts, thumbnail, widget, widgets, sidebar, excerpt, category, post tag, post type, taxonomy, shortcode, multiple widgets
 Requires at least: 4.0
 Tested up to: 4.3
@@ -38,16 +38,16 @@ Before asking a support question:
 = Language =
 * English
 * Bahasa Indonesia
-* [Please contibute to submit your language](https://github.com/satrya/advanced-random-posts-widget/issues)
+* [Please contibute to submit your language](https://github.com/themephe/advanced-random-posts-widget/issues)
 
 = Support =
 
 * [Forum support](http://wordpress.org/support/plugin/advanced-random-posts-widget).
 * [Rate/Review the plugin](http://wordpress.org/support/view/plugin-reviews/advanced-random-posts-widget).
-* [Submit translation](https://github.com/satrya/advanced-random-posts-widget/issues).
-* [Contribute on Github](https://github.com/satrya/advanced-random-posts-widget)
+* [Submit translation](https://github.com/themephe/advanced-random-posts-widget/issues).
+* [Contribute on Github](https://github.com/themephe/advanced-random-posts-widget/)
 
-> Developed with ♥️ by [Satrya](http://satrya.me/) in Indonesia
+> Developed by [ThemePhe](https://themephe.com/) in Indonesia
 
 == Installation ==
 
