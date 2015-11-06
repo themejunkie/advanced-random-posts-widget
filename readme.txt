@@ -36,9 +36,9 @@ This plugin will enable a custom, flexible and advanced random posts. It allows 
 
 * [Forum support](http://wordpress.org/support/plugin/advanced-random-posts-widget).
 * [Rate/Review the plugin](http://wordpress.org/support/view/plugin-reviews/advanced-random-posts-widget).
-* [Contribute on Github](https://github.com/themephe/advanced-random-posts-widget/)
+* [Contribute on Github](https://github.com/themejunkie/advanced-random-posts-widget/)
 
-> Developed by [ThemePhe](https://themephe.com/) in Indonesia
+> Developed by [Theme Junkie](http://www.theme-junkie.com/)
 
 == Installation ==
 
