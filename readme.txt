@@ -1,9 +1,9 @@
-=== Random Posts Widget Extended ===
-Contributors: satrya, themephe
+=== Advanced Random Posts Widget ===
+Contributors: themejunkie, satrya
 Tags: random posts, thumbnail, widget, widgets, sidebar, excerpt, category, post tag, post type, taxonomy, shortcode, multiple widgets
 Requires at least: 4.0
-Tested up to: 4.3
-Stable tag: 2.0.7
+Tested up to: 4.3.1
+Stable tag: 2.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -11,13 +11,10 @@ Provides flexible and advanced random posts. Display it via shortcode or widget 
 
 == Description ==
 
+> Please see [FAQ](http://wordpress.org/plugins/advanced-random-posts-widget/faq/) page to read common questions.
+  Please see [Other Notes](http://wordpress.org/plugins/advanced-random-posts-widget/other_notes/) to read how to use shortcode.
+
 This plugin will enable a custom, flexible and advanced random posts. It allows you to display a list of random posts via shortcode or widget with thumbnail, excerpt and post date, also you can display it from all or specific or multiple taxonomy.
-
-= Important! =
-Before asking a support question:  
-
-* Please see [FAQ](http://wordpress.org/plugins/advanced-random-posts-widget/faq/) page to read common questions.
-* Please see [Other Notes](http://wordpress.org/plugins/advanced-random-posts-widget/other_notes/) to read how to use shortcode.
 
 = Features Include =
 
@@ -35,16 +32,10 @@ Before asking a support question:
 * Add custom html or text before and/or after random posts.
 * Multiple widgets.
 
-= Language =
-* English
-* Bahasa Indonesia
-* [Please contibute to submit your language](https://github.com/themephe/advanced-random-posts-widget/issues)
-
 = Support =
 
 * [Forum support](http://wordpress.org/support/plugin/advanced-random-posts-widget).
 * [Rate/Review the plugin](http://wordpress.org/support/view/plugin-reviews/advanced-random-posts-widget).
-* [Submit translation](https://github.com/themephe/advanced-random-posts-widget/issues).
 * [Contribute on Github](https://github.com/themephe/advanced-random-posts-widget/)
 
 > Developed by [ThemePhe](https://themephe.com/) in Indonesia
@@ -130,25 +121,38 @@ Display 10 random posts
 
 Display with thumbnail and set the size
 `
-[arpw thumbnail="true" thumbnail_size="thumbnail"]
+[arpw thumbnail="true" thumbnail_size="arpw-thumbnail"]
+`
+
+Display posts based on category by id
+`
+[arpw thumbnail="true" cat="10"]
+`
+
+Display portfolio post type
+`
+[arpw post_type="portfolio"]
 `
 
 **Here's the full default shortcode arguments**
 `
 title=""
-title_url=""
 offset=""
 limit="5"
 post_type="post"
 post_status="publish"
 ignore_sticky="1"
 taxonomy=""
+cat=""
+tag=""
 thumbnail="false"
 thumbnail_size="arpw-thumbnail"
 thumbnail_align="left"
 excerpt="false"
 excerpt_length="10"
 date="false"
+date_modified="false"
+date_relative="false"
 css_class=""
 before=""
 after=""
@@ -156,32 +160,14 @@ after=""
 
 == Changelog ==
 
-= 2.0.7 - 08/14/2015 =
-* **Fix:** Hide widget if no posts exist
-* **Add:** Add display post modified date option
+> If you use cache plugin, please flush or clean the cache to see what changes in this plugin.
 
-= 2.0.6 - 07/12/2015 =
-* **Fix:** Deprecated function in WordPress 4.3
-
-= 2.0.5 - 07/12/2015 =
-* WordPress 4.3 support
-* **Update:** Remove `ID` in the widget markup to prevent duplicate ID
-* **Update:** Limit the number of `tags` and `categories` displayed in the widget
-
-= 2.0.4 - 04/1/2015 =
-* WordPress 4.1.1 support.
-* **Add:** Add Custom CSS textarea.
-
-= 2.0.3 - 4/01/2015 =
-* WordPress 4.1 support.
-* **Update:** Language.
-* **Add:** Bahasa Indonesia translation.
-
-= 2.0.2 - 12/03/2014 =
-* **Fix:** Compatibility issue with `Get The Image` plugin/extension.
-* **Fix:** Issue with `html or text before and after recent posts`, now it allow all HTML tags.
-
-= 2.0.1 - 9/15/2014 =
-* Bring back custom thumbnail size options!
-* Bring back category and tag options!
-* Added: Relative date option `eg: 5 days ago`.
+= 2.1.0 - Nov 06, 2015 =
+* UI Changes!
+* Filter `arpw_query` DEPRECATED
+* Change text domain to `advanced-random-posts-widget`
+* Remove `title` attribute in the post link
+* Sanitize after and before the posts with `wp_kses_post`, security purpose
+* Introducing new hook `arpw_before_loop_WIDGETID` & `arpw_after_loop_WIDGETID`
+* Inline default style, no more load extra file from the plugin
+* Sanitize Custom CSS, better security

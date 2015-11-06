@@ -1,39 +1,58 @@
-.widgets-php .arpw-columns-3 {
+.arpw-bg {
+	background-color: #f3f3f3;
+}
+
+.arpw-bg .widget-control-actions {
+	clear: both;
+}
+
+.arpw-form-tabs.ui-tabs-vertical .ui-tabs-nav {
+	padding: 1em 0; 
+	float: left; 
+	width: 8em;
+}
+
+.arpw-form-tabs.ui-tabs-vertical .ui-tabs-nav li { 
+	clear: left; 
+	width: 100%; 
+	margin-bottom: 0;
+	padding: .8em 0 .8em 1em;
+}
+
+.arpw-form-tabs.ui-tabs-vertical .ui-tabs-nav li.ui-state-focus {
+	box-shadow: none;
+	outline: none;
+}
+
+.arpw-form-tabs.ui-tabs-vertical .ui-tabs-nav li a { 
+	display:block;
+	text-decoration: none;
+}
+
+.arpw-form-tabs.ui-tabs-vertical .ui-tabs-nav li a:focus {
+	box-shadow: none;
+}
+
+.arpw-form-tabs.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active { 
+	background-color: #fff;
+}
+
+.arpw-form-tabs.ui-tabs-vertical .arpw-tabs-content {
+	background-color: #fff;
 	overflow: hidden;
-	float: left;
-	width: 31%;
-	margin-right: 3.5%;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	min-height: 12em;
+	padding: 1em 1.5em 1em 1.5em;
 }
 
-.widgets-php .arpw-columns-3 select.widefat {
-	width: 98.5%;
+.arpw-tab-content p {
+	margin-bottom: 1.5em;
 }
 
-.widgets-php .arpw-column-last {
-	float: right;
-	margin-right: 0;
-}
-
-.widgets-php .arpw-columns-3 label {
-	font-size: 11px;
-}
-
-.widgets-php .arpw-columns-3 p small {
+.arpw-tab-content p small {
 	color: #777;
 	font-style: italic;
-}
-
-.arpw-input-half {
-	width: 47%;
-}
-
-.arpw-block {
-	display: block;
-}
-
-label.input-checkbox {
-	width: 100px;
-	display: inline-block;
 }
 
 .arpw-multiple-check-form {
@@ -45,9 +64,21 @@ label.input-checkbox {
 	padding: 10px;
 	max-height: 110px;
 	overflow: auto;
-	margin-top: 0;
 }
 
 .arpw-multiple-check-form ul li:last-child {
 	margin-bottom: 0;
+}
+
+label.input-checkbox {
+	width: 100px;
+	display: inline-block;
+}
+
+.arpw-input-half {
+	width: 47%;
+}
+
+.arpw-block {
+	display: block;
 }

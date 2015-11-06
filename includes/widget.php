@@ -1,12 +1,6 @@
 <?php
 /**
  * Custom random posts widget.
- *
- * @package    Advanced_Random_Posts_Widget
- * @since      0.0.1
- * @author     Satrya
- * @copyright  Copyright (c) 2014, Satrya
- * @license    http://www.gnu.org/licenses/gpl-2.0.html
  */
 class Advanced_Random_Posts_Widget extends WP_Widget {
 
@@ -20,22 +14,35 @@ class Advanced_Random_Posts_Widget extends WP_Widget {
 		// Set up the widget options.
 		$widget_options = array(
 			'classname'   => 'arpw-widget-random',
-			'description' => __( 'An advanced widget that gives you total control over the output of the random posts.', 'arpw' )
+			'description' => __( 'An advanced widget that gives you total control over the output of the random posts.', 'advanced-random-posts-widget' )
 		);
 
 		$control_ops = array(
-			'width'  => 700,
-			'height' => 350,
+			'width'  => 450
 		);
 
 		// Create the widget.
 		parent::__construct(
-			'arpw-widget',                // $this->id_base
-			__( 'Random Posts', 'arpw' ), // $this->name
-			$widget_options,              // $this->widget_options
-			$control_ops                  // $this->control_options
+			'arpw-widget',                                        // $this->id_base
+			__( 'Random Posts', 'advanced-random-posts-widget' ), // $this->name
+			$widget_options,                                      // $this->widget_options
+			$control_ops                                          // $this->control_options
 		);
 
+		// Inline default style
+		if ( is_active_widget( false, false, $this->id_base ) ) {
+			add_action( 'wp_enqueue_scripts', array( $this, 'arpw_default_style' ) );
+		}
+
+	}
+
+	/**
+	 * Default style
+	 *
+	 * @since  2.1.0
+	 */
+	public function arpw_default_style() {
+		wp_enqueue_style( 'arpw-style' );
 	}
 
 	/**
@@ -47,7 +54,7 @@ class Advanced_Random_Posts_Widget extends WP_Widget {
 		extract( $args );
 
 		// Get the random posts.
-		$random = arpw_get_random_posts( $instance );
+		$random = arpw_get_random_posts( $instance, $this->id );
 
 		// Check if the random posts exist
 		if ( $random ) :
@@ -93,7 +100,7 @@ class Advanced_Random_Posts_Widget extends WP_Widget {
 		$instance['post_status']       = esc_attr( $new_instance['post_status'] );
 		$instance['taxonomy']          = esc_attr( $new_instance['taxonomy'] );
 		$instance['cat']               = $new_instance['cat'];
-		$instance['tag']               = $new_instance['tag']; 
+		$instance['tag']               = $new_instance['tag'];
 
 		$instance['thumbnail']         = isset( $new_instance['thumbnail'] ) ? (bool) $new_instance['thumbnail'] : false;
 		$instance['thumbnail_size']    = esc_attr( $new_instance['thumbnail_size'] );
@@ -110,8 +117,8 @@ class Advanced_Random_Posts_Widget extends WP_Widget {
 
 		$instance['css']               = $new_instance['css'];
 		$instance['css_class']         = sanitize_html_class( $new_instance['css_class'] );
-		$instance['before']            = stripslashes( $new_instance['before'] );
-		$instance['after']             = stripslashes( $new_instance['after'] );
+		$instance['before']            = wp_kses_post( $new_instance['before'] );
+		$instance['after']             = wp_kses_post( $new_instance['after'] );
 
 		return $instance;
 	}
