@@ -1,6 +1,6 @@
 {
   "name": "advanced-random-posts-widget",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "author": "Theme Junkie",
   "homepage": "http://www.theme-junkie.com/",
   "licenses": [
@@ -10,8 +10,11 @@
     }
   ],
   "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-wp-i18n": "^0.5.3",
-    "jit-grunt": "^0.9.1"
+    "grunt": "~1.0.1",
+    "grunt-wp-i18n": "^1.0.0",
+    "jit-grunt": "^0.10.0",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-compress": "^1.4.3",
+    "grunt-contrib-copy": "^1.0.0"
   }
 }
